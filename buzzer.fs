@@ -7,7 +7,7 @@ PB1 constant BUZ \ Port for buzzer, must be a pwm port
 
 \ this is just a simple square wave 
 : tone ( length freq - - ) \ length in ms, freq in Hz 
-  buz pwm-init 500 buz pwm dup ms 0 buz pwm  4 / ms
+  buz pwm-init 500 buz pwm dup ms 0 buz pwm  6 / ms
 ;
 
 \ word to play music, see below and inside the bigger examples
@@ -17,7 +17,10 @@ PB1 constant BUZ \ Port for buzzer, must be a pwm port
 	dup 9999 <>
     while
 	    swap 1 cells + dup @ \ get length
-	    1200 swap / \ basis 1.2s
+	    1800 swap / \ basis 1.2s
+	    dup 0< if \ negative lenght gives 1.5 length
+		abs dup 2 / +
+	    then
 	    rot
 	    dup 0= if
 		drop ms \ pause
