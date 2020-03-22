@@ -9,14 +9,14 @@ Install:
 examples:
 
 - Play tone a for 1s
- + 440 1000 tone
+  + 440 1000 tone
 
 - demo play tunes
- + m1 play
+  + m1 play
 
 - play Ode an die Freude
- + !s notes.fs \ installs note definitions
- + !s odeandiefreude.fs
- + ode play
+  + !s notes.fs \ installs note definitions
+  + !s odeandiefreude.fs
+  + ode play
 
 
