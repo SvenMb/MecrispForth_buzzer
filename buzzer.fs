@@ -17,8 +17,8 @@ PB1 constant BUZ \ Port for buzzer, must be a pwm port
 	dup 9999 <>
     while
 	    swap 1 cells + dup @ \ get length
-	    1800 swap / \ basis 1.2s
-	    dup 0< if \ negative lenght gives 1.5 length
+	    1800 swap / \ basis 1.8s, this sounds right but what is correct?
+	    dup 0< if \ negative lenght gives 1.5 length (notes with punctation)
 		abs dup 2 / +
 	    then
 	    rot
