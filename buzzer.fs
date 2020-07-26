@@ -29,6 +29,7 @@ PB1 constant BUZ \ Port for buzzer, must be a pwm port
 	    then
 	    1 cells +
     repeat
+    2drop \ throw away current address and last 9999
 ;
     
 
